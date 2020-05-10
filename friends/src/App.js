@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.css';
 import {ProtectedRoute} from './utils/ProtectedRoute'
-import {Link} from 'react-router-dom'
+import {Link, Route} from 'react-router-dom'
 import {getToken} from './utils/api'
+import Login from './components/Login'
 
 function App() {
 
@@ -16,6 +17,8 @@ function App() {
 			{token && <Link to="/account">My Account</Link>}
 			{token && <Link to="/logout">Log Out</Link>}
      </nav>
+
+     <Route exact path='/signin' component={Login}/>
     </div>
   );
 }
