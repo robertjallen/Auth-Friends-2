@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import {ProtectedRoute} from './utils/ProtectedRoute'
 
 function App() {
   return (
