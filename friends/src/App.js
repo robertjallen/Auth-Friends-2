@@ -23,7 +23,7 @@ function App() {
 			{token && <Link to="/logout">Log Out</Link>}
      </nav>
 
-      <Route exact path='/login' component={Login}/>
+      <Route exact path='/signin' component={Login}/>
 			<ProtectedRoute exact path='/account' component={Account}/>
 			<ProtectedRoute exact path='/logout' component={Logout}/>
 			<ProtectedRoute exact path='/add' component={Add}/>
