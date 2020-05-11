@@ -2,25 +2,20 @@ import React, {useState} from 'react'
 import api from '../utils/api'
 
 export default function Edit(props) {
-
-  const [error, setError] = useState()
-  const [data, setData] = useState(props.history.location.state.friend)
-
-
-    // This is mutating the data we should probably use a reducer
-    console.log("data",data)
+  let friend = props.history.location.state.friend
+  let id = props.history.location.state.friend.id
+  const [error, setError] = useState('')
+  const [data, setData] = useState(friend)
+    
     const handleChange = (event) => {
-      setData({
-        ...data,
-        ...data.name,
-        [event.target.name]: event.target.value,
-      })
+      console.log("data",data)
+      setData({[event.target.name]: event.target.value})
       }
     
       const handleSubmit = (event) => {
         event.preventDefault()
         api()
-            .put(`/api/friends/${data.id}`, data)
+            .put(`/api/friends/${id}`, data)
 			.then(result => {
 				console.log("add result", result)
                 props.history.push('/account')
