@@ -41,7 +41,11 @@ export default function FriendDetails(props) {
                    <h3>{friends.name}</h3>
                    <p>{friends.email}</p>
                    <button onClick={deleteFriend}><i className="fas fa fa-trash"/></button>
-                   <Link to={`/edit/${friends.id}`} friends={friends}><i className="fas fa fa-edit"/></Link>
+
+                   <Link to={{
+                    pathname: `/edit/${friends.id}`,
+                    state: {friend: friends}
+                  }}><i className="fas fa fa-edit"/></Link>
                </div>
                ) : <p><i className="fas fa-circle-notch fa-7x" /></p> }
         </>

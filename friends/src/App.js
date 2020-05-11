@@ -8,6 +8,7 @@ import Logout from './components/Logout'
 import Account from './components/Account'
 import FriendDetails from './components/FriendDetails'
 import Add from './components/Add'
+import Edit from './components/Edit'
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
 			<ProtectedRoute exact path='/account' component={Account}/>
 			<ProtectedRoute exact path='/logout' component={Logout}/>
 			<ProtectedRoute exact path='/add' component={Add}/>
-			{/* <ProtectedRoute exact path='/edit/:id' component={Edit}/> */}
+			<ProtectedRoute exact path='/edit/:id' component={Edit}/>
 			<ProtectedRoute exact path='/friend/:id' component={FriendDetails}/>
     </div>
   );
