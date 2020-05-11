@@ -6,6 +6,8 @@ export default function Edit(props) {
   const [error, setError] = useState()
   const [data, setData] = useState(props.history.location.state.friend)
 
+
+    // This is mutating the data we should probably use a reducer
     console.log("data",data)
     const handleChange = (event) => {
       setData({
