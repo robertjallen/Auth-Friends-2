@@ -1,3 +1,13 @@
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -8,3 +18,17 @@ nav {
 	margin-bottom: 50px;
 	border-radius: 4px;
 }
+
+.card{
+	border: 1px solid darkgray;
+	display: flex;
+	width: 400px;
+	border-radius: 5px;
+	justify-content: space-between;
+	margin: 1px auto;
+	align-items: center;
+	padding: 5px;
+	background: rgb(76, 76, 223);
+	color: #fff;
+	transition: all 0.5s ease;
+  }
