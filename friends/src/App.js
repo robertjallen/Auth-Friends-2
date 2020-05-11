@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
-import {ProtectedRoute} from './utils/ProtectedRoute'
+import ProtectedRoute from './utils/ProtectedRoute'
 import {Link, Route} from 'react-router-dom'
 import {getToken} from './utils/api'
 import Login from './components/Login'
+import Logout from './components/Logout'
 import Account from './components/Account'
+import FriendDetails from './components/FriendDetails'
+import Add from './components/Add'
 
 function App() {
 
@@ -19,8 +22,12 @@ function App() {
 			{token && <Link to="/logout">Log Out</Link>}
      </nav>
 
-     <Route exact path='/signin' component={Login}/>
-     <Route exact path='/account' component={Account}/>
+      <Route exact path='/login' component={Login}/>
+			<ProtectedRoute exact path='/account' component={Account}/>
+			<ProtectedRoute exact path='/logout' component={Logout}/>
+			<ProtectedRoute exact path='/add' component={Add}/>
+			{/* <ProtectedRoute exact path='/edit/:id' component={Edit}/> */}
+			<ProtectedRoute exact path='/friend/:id' component={FriendDetails}/>
     </div>
   );
 }
